@@ -1,6 +1,6 @@
 <template>
     <navbar class="navbar is-fixed-top">
-        <div class="container">{{isActiveLoginModel}}
+        <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
                     <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
@@ -16,7 +16,7 @@
                     <div class="navbar-item">
                         <div class="field is-grouped">
                             <p class="control">
-                            <a class="button" v-on:click="openLoginModal">
+                            <a class="button" v-on:click="showUserPanel">
                                 <span class="icon">
                                     <i class="fa fa-2x fa-user" aria-hidden="true"></i>
                                 </span>
@@ -26,36 +26,50 @@
                     </div>
                 </div>
             </div>
-            <div class="modal" v-bind:class="{ 'is-active' : isActiveLoginModel }">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                    <p class="modal-card-title">Modal title</p>
-                    <button class="delete" aria-label="close"></button>
-                    </header>
-                    <section class="modal-card-body">
-                    <!-- Content ... -->
-                    </section>
-                    <footer class="modal-card-foot">
-                    <button class="button is-success">Save changes</button>
-                    <button class="button">Cancel</button>
-                    </footer>
-                </div>
+            <div v-if="isActivePanel" id="dfsdf">
+              <div v-show="box === 'login'">
+                <login-box @close-login="hideUserPanel" @switch-box="switchBox"></login-box>
+              </div >
+              <div v-show="box === 'register'">
+                <register-box @close-register="hideUserPanel" @switch-box="switchBox"></register-box>
+              </div >
             </div>
         </div>
     </navbar>
 </template>
 
 <script>
+import ModalBox from '~/components/header/ModalBox'
+import LoginBox from '~/components/header/LoginBox'
+import RegisterBox from '~/components/header/RegisterBox'
+
 export default {
-  data: {
-    isActiveLoginModel: false
+  data () {
+    return {
+      isActivePanel: false,
+      box: 'login'
+    }
   },
   methods: {
-    openLoginModal: function () {
-      console.log(this.isActiveLoginModel)
-    //   this.isActiveLoginModel = true
+    showUserPanel: function () {
+      this.isActivePanel = true
+    },
+    hideUserPanel: function () {
+      this.isActivePanel = false
+      this.box = 'login'
+    },
+    switchBox: function () {
+      if (this.box === 'login') {
+        this.box = 'register'
+      } else {
+        this.box = 'login'
+      }
     }
+  },
+  components: {
+    ModalBox,
+    LoginBox,
+    RegisterBox
   }
 }
 </script>
