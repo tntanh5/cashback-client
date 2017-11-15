@@ -1,8 +1,8 @@
 <template>
-    <navbar class="navbar is-fixed-top">
+    <header class="navbar is-fixed-top is-danger">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
+                <a class="navbar-item" href="">
                     <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
                 </a>
                 <button class="button navbar-burger">
@@ -18,7 +18,7 @@
                             <p class="control">
                             <a class="button" v-on:click="showUserPanel">
                                 <span class="icon">
-                                    <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-2x fa-user-circle" aria-hidden="true"></i>
                                 </span>
                             </a>
                             </p>
@@ -35,7 +35,7 @@
               </div >
             </div>
         </div>
-    </navbar>
+    </header>
 </template>
 
 <script>
@@ -73,4 +73,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .navbar {
+    background-color: #23d260;
+  }
+</style>
 

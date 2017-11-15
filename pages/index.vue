@@ -1,13 +1,27 @@
 <template>
+  <section class="hero is-white is-fullheight">
+  <div class="hero-head">
     <header-panel/>
+  </div>
+  <div class="hero-body">
+    <main-content/>
+  </div>
+  <div class="hero-foot">
+    <footer-panel/>
+  </div>
+  </section>
 </template>
 
 <script>
 import HeaderPanel from '~/components/header/HeaderPanel'
+import FooterPanel from '~/components/footer/FooterPanel'
+import MainContent from '~/components/main/MainContent'
 
 export default {
   components: {
-    HeaderPanel
+    HeaderPanel,
+    FooterPanel,
+    MainContent
   }
 }
 </script>
