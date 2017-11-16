@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "bulma": "^0.6.1",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "vee-validate": "^2.0.0-rc.21"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

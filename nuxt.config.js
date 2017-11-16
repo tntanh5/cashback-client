@@ -44,11 +44,14 @@ module.exports = {
       plugins: {
         'postcss-custom-properties': false
       }
-    }
+    },
+    vendor: ['vee-validate']
   },
 
   modules: [
     '@nuxtjs/bulma',
     '@nuxtjs/font-awesome'
-  ]
+  ],
+
+  plugins: ['~/plugins/vee-validate']
 }
