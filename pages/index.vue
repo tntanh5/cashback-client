@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-white is-fullheight">
+  <section class="hero is-light is-fullheight">
   <div class="hero-head">
     <header-panel/>
   </div>

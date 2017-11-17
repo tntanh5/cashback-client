@@ -45,7 +45,7 @@ module.exports = {
         'postcss-custom-properties': false
       }
     },
-    vendor: ['vee-validate']
+    vendor: ['vee-validate', 'axios']
   },
 
   modules: [
@@ -53,5 +53,8 @@ module.exports = {
     '@nuxtjs/font-awesome'
   ],
 
-  plugins: ['~/plugins/vee-validate']
+  plugins: [
+    // ssr: false to only include it on client-side
+    { src: '~/plugins/vee-validate', ssr: false }
+  ]
 }

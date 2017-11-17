@@ -1,9 +1,11 @@
 <template>
-  <section class="footer-panel is-danger">
+<footer class="footer">
+  <!-- <section class="footer-panel is-danger"> -->
     <div class="container">
       <copy-rights></copy-rights>
     </div>
-  </section>
+  <!-- </section> -->
+</footer>
 </template>
 
 <script>
